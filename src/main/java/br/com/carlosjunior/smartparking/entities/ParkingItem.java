@@ -27,6 +27,7 @@ public class ParkingItem {
     private StatusEnum status;
 
     @OneToOne
+    @JoinColumn(name = "idParkingSpace", referencedColumnName = "idParkingSpace")
     private ParkingSpace parkingSpace;
 
 
