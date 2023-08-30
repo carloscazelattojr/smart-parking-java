@@ -1,6 +1,5 @@
 package br.com.carlosjunior.smartparking.dtos;
 
-import br.com.carlosjunior.smartparking.entities.Parking;
 import br.com.carlosjunior.smartparking.enums.StatusEnum;
 import lombok.Data;
 
@@ -8,7 +7,7 @@ import lombok.Data;
 public class ParkingItemDTO {
 
     private Long idParkingItem;
-    private Parking parking;
+    private Long idParking;
     private StatusEnum status;
     private ParkingSpaceDTO parkingSpace;
 

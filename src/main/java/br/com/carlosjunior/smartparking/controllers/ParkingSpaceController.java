@@ -1,8 +1,7 @@
 package br.com.carlosjunior.smartparking.controllers;
 
 import br.com.carlosjunior.smartparking.dtos.ParkingSpaceDTO;
-import br.com.carlosjunior.smartparking.dtos.VehicleDTO;
-import br.com.carlosjunior.smartparking.services.ParkingService;
+import br.com.carlosjunior.smartparking.services.ParkingSpaceService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -17,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import static org.springframework.http.HttpStatus.OK;
 
-@Tag(name = "Parking Space Controller", description = "REST API for managing vehicle")
+@Tag(name = "Parking Space Controller", description = "REST API for managing parking space")
 @RestController
 @RequestMapping("/parking-spaces")
 @RequiredArgsConstructor
 public class ParkingSpaceController {
 
-    private final ParkingService service;
+    private final ParkingSpaceService service;
 
     @Operation(summary = "Get all parking spaces", description = "Retrieve a findAll parking spaces")
     @GetMapping

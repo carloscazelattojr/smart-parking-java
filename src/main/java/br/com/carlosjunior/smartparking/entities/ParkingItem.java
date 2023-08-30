@@ -20,9 +20,7 @@ public class ParkingItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idParkingItem;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_parking")
-    private Parking parking;
+    private Long idParking;
 
     @Enumerated(EnumType.STRING)
     private StatusEnum status;

@@ -23,7 +23,8 @@ public class Parking {
 
     private String name;
 
-    @OneToMany(mappedBy = "parking")
+    @OneToMany
+    @JoinColumn(name = "idParking", referencedColumnName = "idParking")
     private List<ParkingItem> parkingSpaces = new ArrayList<>();
 
 

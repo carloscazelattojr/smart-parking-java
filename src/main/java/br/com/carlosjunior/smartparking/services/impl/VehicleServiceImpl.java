@@ -28,13 +28,13 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public Page<VehicleDTO> findAllPaged(Pageable pageable) {
         Page<Vehicle> vehicles = repository.findAll(pageable);
-        return vehicles.map(vehicle -> modelMapper.map(vehicle, VehicleDTO.class));
+        return vehicles.map(item -> modelMapper.map(item, VehicleDTO.class));
     }
 
     @Override
     public VehicleDTO findById(Long id) {
         Vehicle vehicle = repository.findById(id)
-                .orElseThrow(() -> new NotFoundException(String.format(MessagesExceptions.FIELD_NOTFOUND, "ID")));
+                .orElseThrow(() -> new NotFoundException(String.format(MessagesExceptions.FIELD_NOTFOUND, "Id")));
         return modelMapper.map(vehicle, VehicleDTO.class);
     }
 
