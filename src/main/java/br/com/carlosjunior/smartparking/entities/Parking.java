@@ -23,7 +23,7 @@ public class Parking {
 
     private String name;
 
-    @OneToMany(mappedBy = "parking", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "parking")
     private List<ParkingItem> parkingSpaces = new ArrayList<>();
 
 

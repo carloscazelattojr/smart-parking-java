@@ -21,9 +21,10 @@ public class ParkingItem {
     private Long idParkingItem;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "idParking")
+    @JoinColumn(name = "id_parking")
     private Parking parking;
 
+    @Enumerated(EnumType.STRING)
     private StatusEnum status;
 
     @OneToOne
