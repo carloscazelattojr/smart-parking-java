@@ -1,12 +1,8 @@
 package br.com.carlosjunior.smartparking.services;
 
 import br.com.carlosjunior.smartparking.dtos.ParkingSpaceDTO;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import br.com.carlosjunior.smartparking.utils.BaseService;
 
-public interface ParkingSpaceService {
+public interface ParkingSpaceService extends BaseService<Long, ParkingSpaceDTO> {
 
-    Page<ParkingSpaceDTO> findAllPaged(Pageable pageable);
-
-    ParkingSpaceDTO findById(Long id);
 }

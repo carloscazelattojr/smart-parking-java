@@ -29,6 +29,10 @@ public class ParkingSchedule {
     @JoinColumn(name = "idVehicle", referencedColumnName = "idVehicle")
     private Vehicle vehicle;
 
+    @OneToOne
+    @JoinColumn(name = "idParkingValues", referencedColumnName = "idParkingValues")
+    private ParkingValues parkingValues;
+
     private LocalDateTime entryTime;
     private LocalDateTime exitTime;
 
