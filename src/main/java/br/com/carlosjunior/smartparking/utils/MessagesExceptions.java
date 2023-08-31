@@ -11,7 +11,9 @@ public class MessagesExceptions {
 
     public static final String FIELD_MANDATORY = "%s is mandatory";
 
-    public static final String ALREADY_REGISTERED = " %s already registered";
+    public static final String PARKING_SPACE = "Parking space: %s";
 
-    public static final String PARKING_RECORD_STATUS = "Parking Record: %s";
+    public static final String VEHICLE_NOT_COMPATIBLE_WITH_PARKING_SPACE = "Vehicle not compatible with Parking Space";
+    public static final String VEHICLE_REGISTRED_IN_PARKING_SPACE = "Veiculo já cadastrado para esta vaga";
+    public static final String PARKING_SPACE_IN_USE = "Vaga está em uso";
 }

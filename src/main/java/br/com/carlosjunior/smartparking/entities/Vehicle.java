@@ -1,5 +1,6 @@
 package br.com.carlosjunior.smartparking.entities;
 
+import br.com.carlosjunior.smartparking.enums.VehicleTypeEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,5 +22,8 @@ public class Vehicle {
     private String model;
 
     private String licensePlate;
+
+    @Enumerated(EnumType.STRING)
+    private VehicleTypeEnum vehicleType;
 
 }

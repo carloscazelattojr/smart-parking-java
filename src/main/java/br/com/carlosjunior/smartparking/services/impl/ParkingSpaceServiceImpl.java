@@ -2,6 +2,7 @@ package br.com.carlosjunior.smartparking.services.impl;
 
 import br.com.carlosjunior.smartparking.dtos.ParkingSpaceDTO;
 import br.com.carlosjunior.smartparking.entities.ParkingSpace;
+import br.com.carlosjunior.smartparking.enums.StatusEnum;
 import br.com.carlosjunior.smartparking.exceptions.NotFoundException;
 import br.com.carlosjunior.smartparking.repositories.ParkingSpaceRepository;
 import br.com.carlosjunior.smartparking.services.ParkingSpaceService;
@@ -36,7 +37,8 @@ public class ParkingSpaceServiceImpl implements ParkingSpaceService {
     public ParkingSpaceDTO findById(Long id) {
         ParkingSpace parkingSpace = repository.findById(id)
                 .orElseThrow(() -> new NotFoundException(String.format(MessagesExceptions.FIELD_NOTFOUND, "Id")));
-        return modelMapper.map(parkingSpace, ParkingSpaceDTO.class);
+        return new ParkingSpaceDTO(parkingSpace);
     }
+
 
 }

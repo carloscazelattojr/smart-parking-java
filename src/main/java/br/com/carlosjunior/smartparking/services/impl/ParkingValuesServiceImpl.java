@@ -2,6 +2,7 @@ package br.com.carlosjunior.smartparking.services.impl;
 
 import br.com.carlosjunior.smartparking.dtos.ParkingValuesDTO;
 import br.com.carlosjunior.smartparking.entities.ParkingValues;
+import br.com.carlosjunior.smartparking.enums.VehicleTypeEnum;
 import br.com.carlosjunior.smartparking.exceptions.NotFoundException;
 import br.com.carlosjunior.smartparking.repositories.ParkingValuesRepository;
 import br.com.carlosjunior.smartparking.services.ParkingValuesService;
@@ -36,5 +37,10 @@ public class ParkingValuesServiceImpl implements ParkingValuesService {
     public Page<ParkingValuesDTO> findAllPaged(Pageable pageable) {
         Page<ParkingValues> parkingSpaces = repository.findAll(pageable);
         return parkingSpaces.map(item -> modelMapper.map(item, ParkingValuesDTO.class));
+    }
+
+    @Override
+    public ParkingValuesDTO findParkingValuesByVehicleType(VehicleTypeEnum vehicleType) {
+        return new ParkingValuesDTO(repository.findByVehicleTypeAndIsActiveTrue(vehicleType));
     }
 }
