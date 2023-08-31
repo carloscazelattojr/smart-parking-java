@@ -7,26 +7,26 @@ Projeto de gerenciamento de estacionamento simples, para fins de estudos e desaf
 - `Gradle`
 - `Spring Boot`
 - `H2 / PostgreSql`
-- `Railway` 
+
 
 ## Definições
 
 Utilização da arquitetura MVC.
 
-Sem complexidade em regra de negócio. (Mais simples possível).
+Somente a funcionalidade de Registrar entrada e saída de veículos.
+Os cadastros serão populados via seed.
 
 Não será tratado autenticação
+Não há testes
 
 
 ## Entidades
 
-- `Estacionamento`
-- `EstacionamentoVagas`
-- `Agendamento`
-- `Vaga`
-- `Veiculo`
+- `Parking` - Cadastro do Estacionamento
+- `ParkingItem` - Cadastro de vagas do Estacionamento
+- `ParkingSchedule` - Cadastro da Agenda por vagas
+- `ParkingSpace` - Cadastro da vaga
+- `ParkingValues` - Cadastro de valores 
+- `Vehicle` - Cadastro de veículos
 
-# Diagrama de classe `Mermaid`
-
-em desenvolvimento
 
